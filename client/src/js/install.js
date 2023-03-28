@@ -16,6 +16,5 @@ butInstall.addEventListener('click', async () => {
 });
 
 window.addEventListener('appinstalled', (event) => {
-    alert('JATE is already installed!')
     window.deferredPrompt = null;
 });
