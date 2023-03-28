@@ -4,8 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "npm run server",
+    "start:dev": "concurrently \"cd client && npm run start\" \"cd server && npm run server\" ",
+    "start": "concurrently \"cd client && npm run build\" \"cd server && npm run server\" ",
     "server": "cd server && npm run server",
+    "heroku-prebuild": "concurrently \"cd client && npm install --dev\" \"cd server && npm install --dev\" ",
+    "build": "cd client && npm run build",
     "install": "concurrently \"cd client && npm i\" \"cd server && npm i\""
   },
   "keywords": [],
